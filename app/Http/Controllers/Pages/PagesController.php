@@ -14,7 +14,8 @@ class PagesController extends Controller
 
     public function indexpage()
     {
-        return view('pages.index');
+        $document_type = Documents::all();
+        return view('pages.index',compact('document_type'));
     }
 
     public function lostfound()
@@ -34,11 +35,10 @@ class PagesController extends Controller
 
     public function item_list()
     {
+        $document_type = Documents::all();
         $items = Lostfound::paginate(9);
-        return view('items.item_list',compact('items'));
+        return view('items.item_list',compact('items','document_type'));
     }
-
-   
 
 
     public function claim($id)
@@ -66,6 +66,13 @@ class PagesController extends Controller
         $claim->claimant_email = $request->claimant_email;
         $claim->claimant_phone = $request->claimant_phone;
 
+        $claim->item_ = $item->item;
+        $claim->name_bearer = $item->bearer;
+        $claim->received_email = $item->Received_email;
+        $claim->received_phone = $item->phone;
+        
+
+
         $claim->save();
 
         $item->claimed = 1;
@@ -87,6 +94,30 @@ class PagesController extends Controller
     {
         return view('pages.register');
     }
+
+
+    public function mod()
+    {
+        return view('items.claim_modal');
+    }
+
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $search_count =
+
+        $item = lostfound::query()
+        ->where('docNumber', 'LIKE', "%{$search}%")
+        ->get();
+        $search_count = count($item );
+        return view('items.search_result',compact('item','search_count'));
+
+
+
+        
+    }
+
 
 
     //

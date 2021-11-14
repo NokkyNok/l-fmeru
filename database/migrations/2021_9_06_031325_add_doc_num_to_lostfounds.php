@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RolUserTable extends Migration
+class AddDocNumToLostfounds extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,11 @@ class RolUserTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('lostfounds', function (Blueprint $table) {
+
+            $table->string('docNum')->nullable();
+            //
+        });
     }
 
     /**
@@ -23,6 +27,8 @@ class RolUserTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('lostfounds', function (Blueprint $table) {
+            //
+        });
     }
 }

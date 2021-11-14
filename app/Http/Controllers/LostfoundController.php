@@ -43,6 +43,7 @@ class LostfoundController extends Controller
         $this->validate(request(), [
             'item' => 'required',
             'location' => 'required',
+            'docNumber'=> 'required',
             'Received_date' => 'required',
             'Received_time' => 'required',
             'short_description'=>'required',
@@ -66,6 +67,7 @@ class LostfoundController extends Controller
         
         
         $lostfound->item = $request->item;
+        $lostfound->docNumber = $request->docNumber;
         $lostfound->location = $request->location;
         $lostfound->Received_date= $request->Received_date;
         $lostfound->Received_time= $request->Received_time;

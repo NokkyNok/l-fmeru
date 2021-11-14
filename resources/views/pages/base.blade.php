@@ -69,25 +69,34 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="/">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="/search/found-property">Lost Items</a></li>
-          <li><a href="#team">Team</a></li>
           
-          <li><a href="#contact">Contact</a></li>
-
+          <li><a href="/search/found-property">Lost Items</a></li>
+          
         </ul>
       </nav><!-- .nav-menu -->
       @guest
 
       <a href="{{route('login')}}" class="get-started-btn scrollto">Sign up</a>
       @else
-      <a href="{{route('submit')}}" class="get-started-btn scrollto">Upload Now<i class="icon-upload"></i></a>
+      <a href="#modal1" class="js-modal get-started-btn scrollto">Upload Now<i class="icon-upload"></i></a>
+      <a href="#modal2" class="js-modal get-started-btn scrollto">Search One<i class="icon-upload"></i></a>
       @endguest
 
 
     </div>
   </header><!-- End Header -->
   @yield('content')
+
+  <!-- Submision modal-->
+  
+
+
+
+
+
+
+
+
 <!-- ======= Footer ======= -->
 <footer id="footer">
     <div class="container">
@@ -126,6 +135,7 @@
 
   <!-- Template Main JS File -->
   <script src="{{ asset ('assets/js/main.js')}}"></script>
+  <script src="{{ asset ('assets/js/modal.js')}}"></script>
 
 </body>
 

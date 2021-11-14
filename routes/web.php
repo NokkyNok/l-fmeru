@@ -27,9 +27,12 @@ Route::get('/submit/found-property', 'Pages\PagesController@submit')->name('subm
 Route::get('/search/found-property', 'Pages\PagesController@item_list')->name('itemlist');
 Route::get('/item/claim-submission/{id}', 'Pages\PagesController@claim')->name('claim');
 Route::post('/item/submit_claim/{id}', 'Pages\PagesController@submitclaim')->name('submitclaim');
+Route::get('/search', 'Pages\PagesController@search')->name('search');
 Route::resource('/found', 'LostfoundController');
 Route::resource('/claim', 'ClaimController');
 Route::resource('/contact', 'ContactController');
+
+Route::get('/modal', 'Pages\PagesController@mod')->name('modal');
 
 /* client login */
 Route::get('/client_login', 'Pages\PagesController@login')->name('log');

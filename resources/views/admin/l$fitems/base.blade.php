@@ -53,13 +53,13 @@
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->
-                            <img src="{{asset ('back/plugins/images/logo-icon.png')}}" alt="homepage" />
+                           
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="{{asset ('back/plugins/images/avlogo.png')}}" alt="homepage" />
+                            
                         </span>
                     </a>
                     <!-- ============================================================== -->
@@ -126,15 +126,15 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="index.html" aria-expanded="false"><i class="fas fa-clock fa-fw"
-                                    aria-hidden="true"></i><span class="hide-menu">Orders</span></a></li>
+                                href="/store/items" aria-expanded="false"><i class="fas fa-clock fa-fw"
+                                    aria-hidden="true"></i><span class="hide-menu">Documents (all)</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="profile.html" aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true"></i><span class="hide-menu">Assigned Orders</span></a>
+                                href="/store/claimed-items" aria-expanded="false">
+                                <i class="fa fa-user" aria-hidden="true"></i><span class="hide-menu">Assigned items</span></a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="/processed-orders" aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true"></i><span class="hide-menu">Completed Orders</span></a>
+                                <i class="fa fa-user" aria-hidden="true"></i><span class="hide-menu">Claims reports</span></a>
                         </li>
                         
                             <a href="/"
