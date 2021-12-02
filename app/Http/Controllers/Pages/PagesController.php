@@ -105,8 +105,6 @@ class PagesController extends Controller
     public function search(Request $request)
     {
         $search = $request->input('search');
-        $search_count =
-
         $item = lostfound::query()
         ->where('docNumber', 'LIKE', "%{$search}%")
         ->get();
@@ -116,6 +114,12 @@ class PagesController extends Controller
 
 
         
+    }
+
+
+    public function phase()
+    {
+        return view('phases.phase1');
     }
 
 

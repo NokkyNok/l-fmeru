@@ -23,6 +23,7 @@
               </p>
               <div class="social">
               <a href="{{route('claim',$item->id)}}"><button class="btn btn-info btn-sm">claim</button></a>
+              <a href="{{route('claim',$item->id)}}"><button class="btn btn-info btn-sm">Attach owner</button></a>
               </div>
             </div>
           </div>

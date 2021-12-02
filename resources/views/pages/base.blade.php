@@ -55,6 +55,29 @@
         <a href="#" class="skype"><i class="icofont-skype"></i></a>
         <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
       </div>
+      @guest
+      <li class="">
+      @else
+      <div class="social-links">
+      <li class="nav-item dropdown">
+          <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+              {{ Auth::user()->name }}
+          </a>
+
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                  {{ __('Logout') }}
+              </a>
+
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+              </form>
+          </div>
+      </li>
+      </div>
+      @endguest
     </div>
   </div>
 
@@ -76,10 +99,12 @@
       </nav><!-- .nav-menu -->
       @guest
 
-      <a href="{{route('login')}}" class="get-started-btn scrollto">Sign up</a>
+      <a href="{{route('register')}}" class="get-started-btn scrollto">Sign up</a>
+      <a href="{{route('login')}}" class="get-started-btn scrollto">Sign in</a>
       @else
       <a href="#modal1" class="js-modal get-started-btn scrollto">Upload Now<i class="icon-upload"></i></a>
       <a href="#modal2" class="js-modal get-started-btn scrollto">Search One<i class="icon-upload"></i></a>
+      <a href="#modal3" class="js-modal get-started-btn scrollto">Lost One<i class="icon-upload"></i></a>
       @endguest
 
 

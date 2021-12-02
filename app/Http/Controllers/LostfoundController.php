@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use App\Lost;
 use App\Documents;
 use App\Lostfound;
+use App\Mail\foundMail;
 use App\Mail\receivedMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -40,6 +42,7 @@ class LostfoundController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate(request(), [
             'item' => 'required',
             'location' => 'required',
@@ -54,6 +57,8 @@ class LostfoundController extends Controller
             'phone'=>'required',
             'sample_image' => 'required',
         ]);
+        
+
         
 
         $lostfound= new Lostfound();
@@ -83,6 +88,13 @@ class LostfoundController extends Controller
         $lostfound->save();
 
         Mail::to(Auth::user()->email)->send(new receivedMail());
+
+        $attach = Lost::where('doc_number',$lostfound->docNumber )->first();
+       if ($attach)
+       {
+        Mail::to($attach->email)->send(new foundMail());
+       }
+        
 
 
 

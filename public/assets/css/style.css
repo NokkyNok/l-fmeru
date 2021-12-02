@@ -1559,3 +1559,70 @@ section {
 		
 		
 		
+
+
+
+/* Phases styling */
+.small-img-group
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+.small-img-col
+{
+  flex-basis: 24%;
+  cursor: pointer;
+}
+
+.phase select
+{
+  display: block;
+  margin: 0;
+  width: 100px;
+  padding: 5px 2px;
+
+
+}
+.desc h6,h2,h3,h4
+{
+  color: grey;
+}
+
+.desc
+{
+  font-family: "Open Sans", sans-serif;
+}
+
+.desc input
+{
+  width: 50px;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+
+}
+.desc  input:focus
+{
+  outline: none;
+}
+
+.desc  .buy-btn
+{
+
+  opacity: 1;
+  background: #47aeff;
+  padding: 5px;
+  transition: 0.3s all ease-out;
+}
+
+
+.desc .info
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+

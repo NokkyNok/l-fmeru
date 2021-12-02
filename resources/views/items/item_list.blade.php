@@ -239,6 +239,104 @@
 
 @endguest
 
+
+
+
+
+
+
+
+
+
+<!-- Have lost an item? -->
+@guest
+ <a href="#modal3" id="modals" class="js-modal"></a>
+<div id="modal3" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titles" style="display:none;"  >
+    <div class="modal-wrapper stopm">
+      <button class="closem btn btn-info btn-sm"></button>
+      <div class="row">
+
+@else
+
+  <a href="#modal3" id="modals" class="js-modal"></a>
+<div id="modal3" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titles" style="display:none;"  >
+    <div class="modal-wrapper stopm">
+      <button class="closem btn btn-info btn-sm">close</button>
+      <div class="row">
+
+          
+          
+<div class="col-lg-12 col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch">
+  
+<form action="{{route('lost.store')}}" class="found-form" method="POST" enctype="multipart/form-data">
+  @csrf
+  
+  @include('flash-message')
+  
+    <h3 class="head">Lost an Document?(Place submission)</h3>
+    <div class="form-row">
+  
+      <div class="form-group col-md-6">
+        <label for="doc"><h5>Doc_unique ID</h5> </label>
+        <input type="text" class="form-control"  placeholder="" name="doc"  />
+        <div class="validate"></div>
+      </div>
+     
+    </div>
+    <div class="form-row">
+  
+      <div class="form-group col-md-6">
+      <select name="category" id="">
+         
+         @foreach($document_type as $type)
+         <option value="{{$type->type}}">{{$type->type}}</option>
+         @endforeach
+
+       </select>
+      </div>
+     
+    </div>
+    <div class="form-row">
+  
+      <div class="form-group col-md-6">
+        <label for="doc"><h5>Holder's Name</h5> </label>
+        <input type="text" class="form-control"  placeholder="" name="name"  />
+        <div class="validate"></div>
+      </div>
+     
+    </div>
+    <div class="form-row">
+  
+      <div class="form-group col-md-6">
+        <label for="doc"><h5>Email Address</h5> </label>
+        <input type="text" class="form-control"  placeholder="" name="email"  />
+        <div class="validate"></div>
+      </div>
+     
+    </div>
+    <div class="form-row">
+  
+      <div class="form-group col-md-6">
+        <label for="doc"><h5>Holder's Nationality</h5> </label>
+        <input type="text" class="form-control"  placeholder="" name="nationality"  />
+        <div class="validate"></div>
+      </div>
+     
+    </div>
+ 
+    <div class="text-center"><button class= "btn btn-info" type="submit" >Submit</button></div>
+  </form>
+</div>
+
+</div>
+
+    </div>
+	
+
+</div>
+
+@endguest
+
     </section><!-- End Team Section -->
 
 @endsection
